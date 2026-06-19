@@ -30,20 +30,32 @@ Ambas
 """
 
 # Código para pegar as listas de input
-primeira_lista = [*map(int, input("Digite a sua primeira lista (separando os números por vírgula): ").split(","))]
-segunda_lista = [*map(int, input("Digite a sua segunda lista (separando os números por vírgula): ").split(","))]
+#primeira_lista = [*map(int, input("Digite a sua primeira lista (separando os números por vírgula): ").split(","))]
+#segunda_lista = [*map(int, input("Digite a sua segunda lista (separando os números por vírgula): ").split(","))]
 
 # Fazer a partir daqui
 
 primeira_lista = [*map(int, input("Digite a sua primeira lista (separando os números por vírgula): ").split(","))]
 segunda_lista = [*map(int, input("Digite a sua segunda lista (separando os números por vírgula): ").split(","))]
-maior_primeira = max(primeira_lista)
-maior_segunda = max(segunda_lista)
-if maior_primeira > maior_segunda:
+
+maior_valor = 0
+
+for i in range (len(primeira_lista)): 
+    if i == 0:
+        maior_valor = primeira_lista[i]
+    elif primeira_lista[i] > maior_valor:
+            maior_valor = primeira_lista[i]
+
+maior_valor_segunda = 0
+for i in range (len(segunda_lista)): 
+    if i == 0:
+        maior_valor_segunda = segunda_lista[i]
+    elif segunda_lista[i] > maior_valor_segunda:
+            maior_valor_segunda = segunda_lista[i]
+
+if maior_valor > maior_valor_segunda: 
     print("Primeira")
-
-elif maior_segunda > maior_primeira:
+elif maior_valor_segunda > maior_valor: 
     print("Segunda")
-
 else:
     print("Ambas")
