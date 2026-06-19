@@ -29,4 +29,4 @@ impares = []
 for numero in lista:
      if numero % 2 != 0:
            impares.append(numero)
-           print(f"Os números ímpares são {impares}")
+           print(f"Os números ímpares são {impares}") 
